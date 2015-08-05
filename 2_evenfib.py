@@ -1,15 +1,17 @@
-def fibonnaciEvenSum(cap, evenSum=0, primeHistory=[]):
-	print "Iter " + str(len(primeHistory))
-	if not len(primeHistory):
-		primeHistory = [1, 1]
+def fibonnaciEvenSum(cap, evenSum=0, fibHistory=[]):
+	print "Iter " + str(len(fibHistory))
+	if not len(fibHistory):
+		fibHistory = [1, 1]
 	else:
-		primeHistory.append(primeHistory[len(primeHistory) - 1] + primeHistory[len(primeHistory) - 2])
-	lastPrimeValue = primeHistory[len(primeHistory) - 1]
-	if not lastPrimeValue % 2:
-		evenSum += lastPrimeValue
-	if lastPrimeValue < cap:
-		return fibonnaciEvenSum(cap, evenSum, primeHistory)
+		fibHistory.append(fibHistory[len(fibHistory) - 1] + fibHistory[len(fibHistory) - 2])
+	lastFibValue = fibHistory[len(fibHistory) - 1]
+	if lastFibValue < cap:
+		if not lastFibValue % 2:
+			evenSum += lastFibValue
+		return fibonnaciEvenSum(cap, evenSum, fibHistory)
 	else:
 		return evenSum
 
-print fibonnaciEvenSum(4000000)
+print "Input a max/cap on the fib. series:"
+cap = int(raw_input())
+print fibonnaciEvenSum(cap)

@@ -13,5 +13,6 @@ def sumOfFizzBuzz(cap, sum=0):
 		fizzOrBuzz = fizzBuzz(i)
 		if fizzOrBuzz:
 			sum += i
+	return sum
 
 print sumOfFizzBuzz(1000)
