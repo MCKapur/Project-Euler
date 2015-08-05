@@ -1,7 +1,6 @@
 import sys
 import itertools
 sys.setrecursionlimit(10000000)
-itertools.count(1000000000000)
 
 def isPrime(n):
 	if n < 2:
@@ -28,7 +27,11 @@ def computePrimeFactorsFor(n, primeList=[]):
 			return primeList
 
 def getMaxPrimeFactor(n):
-	return max(computePrimeFactorsFor(n))
+	primeFactors = computePrimeFactorsFor(n)
+	if primeFactors and len(primeFactors):
+		return max(primeFactors)
+	else:
+		return n
 
 print "Input a number to get the max prime factor from:"
 num = int(raw_input())
