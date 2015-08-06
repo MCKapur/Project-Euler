@@ -11,7 +11,7 @@ def getPalindromeFromMaxDigits(digits):
 			if length and (not length % 2) and palindromeStr[:length/2] == palindromeStr[length/2:][::-1]:
 				if p > palindrome:
 					palindrome = p
-					print "Found higher palindrome: " + str(palindrome)
+					print "Found higher palindrome: " + str(palindrome) + " with " + str(v1-i) + "*" + str(v2-j)
 	return palindrome
 
 print "Input number of max. digits:"
